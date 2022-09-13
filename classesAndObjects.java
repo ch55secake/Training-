@@ -12,6 +12,7 @@ public static class Car {
     String owner;
     String make;
     String model;
+    private int motNumber;
     // Ideally a lot of these objects would be private, but It's not always easier than leaving the object public.
     // This can be why you need getters and setters
     private int yearBuilt;
@@ -29,6 +30,7 @@ public static class Car {
         this.model = model;
         this.yearBuilt = yearBuilt;
         this.owner = owner;
+        this.motNumber = motNumber;
     }
     // This is an example of getters and setters, it is a way of adding extra validation when you want to add something
     // to the class

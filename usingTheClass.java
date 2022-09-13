@@ -19,8 +19,9 @@ public class usingTheClass {
     //    List<classesAndObjects.Car> filtered =
                 carsOfPeople
                         .stream()
+                        // After the filter I can pick what object from the class I want to print
                         .filter(car -> car.owner.equals("Jim"))
-                                .forEach(car -> System.out.println(car));
+                                .forEach(car -> System.out.println(car.make));
 
 
 
