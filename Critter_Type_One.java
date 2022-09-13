@@ -15,7 +15,7 @@ public class Critter_Type_One extends Critter {
         }
     }
 
-    public void feed(Bread bread) throws InterruptedException {
+    public void feed() throws InterruptedException {
         System.out.println(this.name + " is eating!");
         for (int i = 5; i >= 0; i--) {
             Thread.sleep(1000);

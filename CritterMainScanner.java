@@ -12,28 +12,27 @@ public class CritterMainScanner {
         Critter critter;
 
         if (userChoice.equals("a")) {
-            critter = new Critter("Jim", true, 0, 0, 0, 5);
+            critter = new Critter("Jim", true, 0, 0, 0, 0);
             while (critter.isAlive()) {
                 System.out.println("Critter has low energy and must sleep!");
                 try {
                     critter.sleep();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
-                    Bread bread = new Bread();
-                    critter.feed(bread);
+                    Food b = new Bread();
+                    b.applyFood(critter);
                     critter.exercise();
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                     throw new RuntimeException(e);
+
                 }
+
             }
 
 
 
             } else if (userChoice.equals("b")){
               Critter_Type_One critter_type_one;
-              critter_type_one = new Critter_Type_One("John", true, 0, 0, 1, 8);
+              critter_type_one = new Critter_Type_One("John", true, 0, 0, 1, 0);
                 while (critter_type_one.isAlive()) {
                     System.out.println("Critter has low energy and must sleep!");
                     try {
@@ -42,8 +41,8 @@ public class CritterMainScanner {
                         throw new RuntimeException(e);
                     }
                     try {
-                        Bread bread = new Bread();
-                        critter_type_one.feed(bread);
+                        Food b = new Bread();
+                        b.applyFood(critter_type_one);
                         critter_type_one.exercise();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);

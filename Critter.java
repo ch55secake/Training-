@@ -62,7 +62,7 @@ public class Critter {
         for (int i = 5; i >= 0; i--) {
             Thread.sleep(1000);
             System.out.println("Zzzzzzzzzz!");
-            setEnergy(10);
+            setEnergy(1);
         }
 
     }
@@ -81,7 +81,7 @@ public class Critter {
 
 
     public static void main(String[] args) {
-        Critter critterA = new Critter("Jim", true, 0, 0, 0, 5);
+        Critter critterA = new Critter("Jim", true, 0, 0, 0, 0);
         while (critterA.isAlive()) {
             if (critterA.energy <= 5) {
                 System.out.println("Critter has low energy and must sleep!");
@@ -91,11 +91,13 @@ public class Critter {
                     throw new RuntimeException(e);
                 }
                 try {
-                 //   critterA.feed();
+                    Food b = new Bread();
+                    b.applyFood(critterA);
                     critterA.getEnergy();
                     critterA.exercise();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
+
                 }
             }
         }
